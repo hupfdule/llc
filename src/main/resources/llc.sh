@@ -11,13 +11,14 @@ if [ -n "$JAVA_HOME" ]; then
 else
   # If JAVA_HOME is not set, try to search for it from the java executable
   WHICH_JAVA=$(which java)
-  if [ -n "$WHICH_JAVA" ]; then
+  if [ -n "$WHICH_JAVA" ] && [ -f $(dirname $WHICH_JAVA)/../lib/tools.jar ]; then
     TOOLS_JAR=$(dirname $WHICH_JAVA)/../lib/tools.jar
-  else 
-    # If that doesn't work, too, try to find it under /usr/lib/jvm/
+  fi
+  if [ -z "$TOOLS_JAR" ]; then
+    # If that didn't work, too, try to find it under /usr/lib/jvm/
     TOOLS_JAR_FROM_USR_LIB_JVM=$(ls /usr/lib/jvm/*/lib/tools.jar)
     if [ -n "$TOOLS_JAR_FROM_USR_LIB_JVM" ]; then
-      TOOLS_JAR=$(get_first "$TOOLS_JAR_FROM_USR_LIB_JVM")
+      TOOLS_JAR=$(get_first $TOOLS_JAR_FROM_USR_LIB_JVM)
     else
       # If even that didn't work, assume the tools.jar is already set in
       # the $CLASSPATH
@@ -26,8 +27,9 @@ else
   fi
 fi
 
+SCRIPT_LOCATION=$(dirname $(readlink -f "$0"))
 # The application jar file
-JAR_FILE=llc.jar
+JAR_FILE=$SCRIPT_LOCATION/llc.jar
 CLASSPATH=$CLASSPATH:$JAR_FILE
 # If we found a tools.jar, append it to the classpath
 if [ -n "$TOOLS_JAR" ]; then
