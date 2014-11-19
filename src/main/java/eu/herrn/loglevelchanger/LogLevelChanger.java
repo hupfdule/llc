@@ -98,8 +98,9 @@ public class LogLevelChanger {
    }
 
 
-  private static LoggingMXBean connect(final String pid) throws AttachNotSupportedException, IOException, MalformedObjectNameException, MalformedURLException {
+  private  LoggingMXBean connect(final String pid) throws AttachNotSupportedException, IOException, MalformedObjectNameException, MalformedURLException {
     final VirtualMachine vm= VirtualMachine.attach(pid);
+    this.loadManagementAgent(vm);
     final Properties agentProperties = vm.getAgentProperties();
     final String connectorAddress= agentProperties.getProperty("com.sun.management.jmxremote.localConnectorAddress");
     final JMXServiceURL serviceUrl= new JMXServiceURL(connectorAddress);
@@ -145,6 +146,32 @@ public class LogLevelChanger {
     return false;
   }
 
+  // Shamelessly copied from sun.tools.jconsole.LocalVirtualMachine#loadManagementAgent()
+  private void loadManagementAgent(final VirtualMachine vm) throws IOException {
+    final String home = vm.getSystemProperties().getProperty("java.home");
+    // Normally in ${java.home}/jre/lib/management-agent.jar but might
+    // be in ${java.home}/lib in build environments.
+
+    String agent = home + File.separator + "jre" + File.separator + "lib" + File.separator + "management-agent.jar";
+    File f = new File(agent);
+    if (!f.exists()) {
+      agent = home + File.separator +  "lib" + File.separator +
+              "management-agent.jar";
+      f = new File(agent);
+      if (!f.exists()) {
+        throw new IOException("Management agent not found");
+      }
+    }
+
+    agent = f.getCanonicalPath();
+    try {
+      vm.loadAgent(agent, "com.sun.management.jmxremote");
+    } catch (AgentLoadException x) {
+      throw new IOException(x);
+    } catch (AgentInitializationException x) {
+      throw new IOException(x);
+    }
+  }
 
   private static Options parseOptions(final String[] args) {
     final String pid;
