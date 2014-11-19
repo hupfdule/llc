@@ -25,7 +25,8 @@ public class LogLevelChanger {
    private static final String[] IGNORE_LOGGER_PREFIXES= {
      "java.",
      "javax.",
-     "sun."
+     "sun.",
+     "com.sun.",
    };
 
    private static final String USAGE=
