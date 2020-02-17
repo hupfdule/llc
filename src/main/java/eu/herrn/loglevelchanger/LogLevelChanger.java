@@ -1,12 +1,27 @@
 package eu.herrn.loglevelchanger;
 
-import com.sun.tools.attach.*;
-import java.io.*;
-import java.net.*;
-import java.util.*;
-import java.util.logging.*;
-import javax.management.*;
-import javax.management.remote.*;
+import com.sun.tools.attach.AttachNotSupportedException;
+import com.sun.tools.attach.AgentInitializationException;
+import com.sun.tools.attach.AgentLoadException;
+import com.sun.tools.attach.VirtualMachine;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import java.util.TreeMap;
+import java.util.logging.Level;
+import java.util.logging.LogManager;
+import java.util.logging.LoggingMXBean;
+import javax.management.JMX;
+import javax.management.MBeanServerConnection;
+import javax.management.MalformedObjectNameException;
+import javax.management.ObjectName;
+import javax.management.remote.JMXConnector;
+import javax.management.remote.JMXConnectorFactory;
+import javax.management.remote.JMXServiceURL;
 
 /**
  * .
