@@ -33,12 +33,14 @@
 
         <plugin>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>2.5.1</version>
+          <version>3.1.0</version>
           <configuration>
-            <!--<descriptor>src/assembly/dep.xml</descriptor>-->
+            <descriptors>
+              <descriptor>src/assembly/deploy-pkg.xml</descriptor>
+            </descriptors>
             <descriptorRefs>
               <descriptorRef>jar-with-dependencies</descriptorRef>
-              <descriptorRef>bin</descriptorRef>
+              <!-- <descriptorRef>bin</descriptorRef> -->
             </descriptorRefs>
             <archive>
               <manifest>
@@ -48,6 +50,7 @@
           </configuration>
           <executions>
             <execution>
+              <id>deploy-pkg</id>
               <phase>package</phase>
               <goals>
                 <goal>single</goal>
@@ -55,6 +58,31 @@
             </execution>
           </executions>
         </plugin>
+
+        <!-- <plugin> -->
+        <!--   <artifactId>maven&#45;assembly&#45;plugin</artifactId> -->
+        <!--   <version>3.1.0</version> -->
+        <!--   <configuration> -->
+        <!--     <!&#45;&#45;<descriptor>src/assembly/dep.xml</descriptor>&#45;&#45;> -->
+        <!--     <descriptorRefs> -->
+        <!--       <descriptorRef>jar&#45;with&#45;dependencies</descriptorRef> -->
+        <!--       <descriptorRef>bin</descriptorRef> -->
+        <!--     </descriptorRefs> -->
+        <!--     <archive> -->
+        <!--       <manifest> -->
+        <!--         <mainClass>eu.herrn.loglevelchanger.LogLevelChanger</mainClass> -->
+        <!--       </manifest> -->
+        <!--     </archive> -->
+        <!--   </configuration> -->
+        <!--   <executions> -->
+        <!--     <execution> -->
+        <!--       <phase>package</phase> -->
+        <!--       <goals> -->
+        <!--         <goal>single</goal> -->
+        <!--       </goals> -->
+        <!--     </execution> -->
+        <!--   </executions> -->
+        <!-- </plugin> -->
       </plugins>
     </build>
 

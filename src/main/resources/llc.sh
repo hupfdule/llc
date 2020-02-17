@@ -28,8 +28,8 @@ else
 fi
 
 SCRIPT_LOCATION=$(dirname $(readlink -f "$0"))
-# The application jar file
-JAR_FILE=$SCRIPT_LOCATION/llc.jar
+# The application jar file (and any dependencies)
+JAR_FILE=$SCRIPT_LOCATION/*
 CLASSPATH=$CLASSPATH:$JAR_FILE
 # If we found a tools.jar, append it to the classpath
 if [ -n "$TOOLS_JAR" ]; then
