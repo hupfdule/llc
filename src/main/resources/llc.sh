@@ -37,4 +37,4 @@ if [ -n "$TOOLS_JAR" ]; then
 fi
 
 #now run the application
-java -cp $CLASSPATH eu.herrn.loglevelchanger.LogLevelChanger $@
+java -cp $CLASSPATH de.poiu.llc.LogLevelChanger $@

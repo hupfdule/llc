@@ -116,7 +116,7 @@
             <archive>
               <manifest>
                 <addClasspath>true</addClasspath>
-                <mainClass>eu.herrn.loglevelchanger.LogLevelChanger</mainClass>
+                <mainClass>de.poiu.llc.LogLevelChanger</mainClass>
               </manifest>
             </archive>
           </configuration>
@@ -150,7 +150,7 @@
             </descriptorRefs>
             <archive>
               <manifest>
-                <mainClass>eu.herrn.loglevelchanger.LogLevelChanger</mainClass>
+                <mainClass>de.poiu.llc.LogLevelChanger</mainClass>
               </manifest>
             </archive>
           </configuration>

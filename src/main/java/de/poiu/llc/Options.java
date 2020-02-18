@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License version
  * 2 along with this work; if not, see <http://www.gnu.org/licenses/>.
  */
-package eu.herrn.llc;
+package de.poiu.llc;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
