@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.poiu.llc</groupId>
     <artifactId>llc</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>llc</name>
     <packaging>jar</packaging>
     <description>Change the log level of java.util.logging loggers at runtime</description>
@@ -20,7 +20,7 @@
       <url>https://github.com/hupfdule/llc</url>
       <connection>scm:git:git://github.com/hupfdule/llc.git</connection>
       <developerConnection>scm:git:git@github.com:hupfdule/llc.git</developerConnection>
-      <tag>llc-1.0.0</tag>
+      <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
