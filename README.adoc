@@ -1,0 +1,84 @@
+LogLevelChanger
+===============
+Marco Herrn <marco@mherrn.de>
+2020-02-18
+:compat-mode!:
+:toc:
+:homepage: https://github.com/hupfdule/llc
+:download-page: https://github.com/hupfdule/llc/releases
+:license-link: https://github.com/hupfdule/llc/blob/master/LICENSE
+:source-highlighter: prettify
+:llc-version: 1.0-SNAPSHOT
+
+Change the log level of java.util.logging loggers at runtime.
+
+
+What is LogLevelChanger
+-----------------------
+
+LogLevelChanger is a small CLI program for adjusting the java.util.logging
+log levels of a process at runtime.
+
+Other logging libraries already provide a way to modify the log levels at
+runtime by rereading the logging configuration or maybe by other means, but
+java.util.logging does not provide such a functionality out of the
+box.footnote:[It is already possible by means of JMX, e.g. via JConsole.
+This approach is actually used by LogLevelChanger.]
+
+
+Prerequisites
+-------------
+
+LogLevelChanger can be used with Java 5 to 8, but is not compatible with
+Java 9 or higher.
+
+As LogLevelChanger uses the tools.jar provided by the JDK an installation
+of the JDK must be available.
+
+
+Installation
+------------
+
+LogLevelChanger is provided as a zipfile or tarball at the
+{download-page}[Download page]. These contain the jar file and a shell
+script to run it. The shell script is only provided for Unix-like systems
+at the moment. Expand of these archives to a directory of your choice.
+
+
+Usage
+-----
+
+Run LogLevelChanger via the provided shell script.
+Without any parameters it provides a usage note and exits.
+
+[source]
+--------------------------------------------------------------------------------
+SYNOPSIS
+       LogLevelChanger PID  [LOGGER [LOGLEVEL]]
+
+DESCRIPTION
+       Prints or changes the LogLevels of Loggers of a Java process.
+       Without any arguments (apart from the PID), it prints all the
+       loggers and their configured LogLevels.
+       If only the LOGGER is given, it prints out the LogLevel of that
+       Logger.
+       If both, the LOGGER and the LOGLEVEL are given, it sets the
+       LogLevel of the given Logger.
+
+PARAMETERS
+       PID
+               The PID of the process for which to print or change the LogLevels.
+
+       LOGGER
+               The name of the Logger to print or the change the LogLevel of.
+
+       LOGLEVEL
+               The log level to set for the given Logger.
+--------------------------------------------------------------------------------
+
+
+License
+-------
+
+LogLevelChanger is licensed under the terms of the link:{license-link}[GPL
+2 with Classpath Exception].

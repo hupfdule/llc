@@ -1,0 +1,42 @@
+= Contributing to LogLevelChanger
+
+Thanks for your interest in contributing to LogLevelChanger
+
+== How to contribute
+
+If you intent to do larger changes it is advisable to open an
+https://github.com/hupfdule/LogLevelChanger/issues[Issue] issue first,
+describing the problem and the intentions. This helps reducing wasted
+effort and duplicated work by allowing This helps avoiding duplicate work
+or your changes being refused for some reason.  to discuss the change
+first.
+
+Of course you are free to just fork the project, do the intented changes
+and create a pull request.
+
+== What to contribute
+
+=== Provide compatibility with Java 9+
+
+LogLevelChanger is only compatible with Java 5 to 8 and does not run with
+new Java versions. It would be nice to have it compatible with Java 9+.  If
+you are interested in providing that compatibility please open an
+https://github.com/hupfdule/LogLevelChanger/issues[Issue] about it with a
+short description on how you want to achieve that goal.
+
+=== Provide shell scripts for other systems than Linux/Unix
+
+Being a java program LogLevelChanger already is platform independent. But
+the provided shell script is only provided for Unix-like systems. It would
+be nice to have shell scripts for other systems (especially MacOS and
+Windows), too.
+
+=== Writing code
+
+When writing some code please follow our
+https://hupfdule.github.io/styleguide/javaguide.html[code conventions].
+
+Please structure your commits logically and respect the original
+formatting.  Do not change formattings unrelated to any functional changes,
+even if the existing formatting violates the styleguide.  To do such
+formatting changes, please prepare a separate pull request.
