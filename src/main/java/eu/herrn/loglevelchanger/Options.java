@@ -25,7 +25,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author mherrn
+ * @author Marco Herrn
  */
 public class Options {
    private static final Logger LOGGER= Logger.getLogger(Options.class.getName());

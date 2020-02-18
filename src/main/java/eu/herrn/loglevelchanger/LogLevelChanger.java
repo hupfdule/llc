@@ -42,14 +42,13 @@ import javax.management.remote.JMXConnector;
 import javax.management.remote.JMXConnectorFactory;
 import javax.management.remote.JMXServiceURL;
 
-/**
- * .
- *  TODO: Erlaube das Setzen der Ignore-Prefixes
- *  TODO: Erlaube --verbose; Das sollte nach dem Setzen eine Zeile mit dem Loggernamen und dem dann aktuellen Level ausgeben
+/*
+ *  TODO: Allow specification of ignore-prefixes
  *  TODO: Predefined Ingore-Prefixes (JDK, JGOODIES, ...)
- *  TODO: Konfigurationsdatei (vorwiegend für Ignore-Prefixes, aber auch für weitere Optionen (wie --verbose)
- *        Sollte auch aus aktuellem Verzeichnis geladen werden können. Dann kann man das auch projektspezifisch erstellen
- *  TODO: Assembly-Plugin verfeinern (bin soll das Startskript an korrekter Position haben)
+ *  TODO: Allow --verbose; This should then write a line with the logger and the new log level.
+ */
+
+/**
  *
  *  Thanks go to http://marxsoftware.blogspot.de/2010/04/dynamic-java-log-levels-with.html
  *
