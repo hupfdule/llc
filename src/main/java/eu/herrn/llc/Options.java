@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License version
  * 2 along with this work; if not, see <http://www.gnu.org/licenses/>.
  */
-package eu.herrn.loglevelchanger;
+package eu.herrn.llc;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
