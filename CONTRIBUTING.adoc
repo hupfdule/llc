@@ -18,7 +18,7 @@ and create a pull request.
 
 === Provide compatibility with Java 9+
 
-LogLevelChanger is only compatible with Java 5 to 8 and does not run with
+LogLevelChanger is only compatible with Java 6 to 8 and does not run with
 new Java versions. It would be nice to have it compatible with Java 9+.  If
 you are interested in providing that compatibility please open an
 https://github.com/hupfdule/LogLevelChanger/issues[Issue] about it with a
